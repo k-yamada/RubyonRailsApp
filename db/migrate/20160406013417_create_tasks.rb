@@ -1,11 +1,11 @@
 class CreateProjects < ActiveRecord::Migration
   def change
-    create_table :projects do |t|
+    create_table :tasks do |t|
       t.string :title
       t.boolean :done, default: false
-      t.references :project, index: true, foreign_key: true
+      t.references :project, index: true,
 
-      t.timestamps null: false
+      t.timestamps
     end
   end
 end

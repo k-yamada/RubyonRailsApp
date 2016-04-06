@@ -1,4 +1,29 @@
-Rails.application.routes.draw do
+#Rails.application.routes.draw do
+
+#  resources :projects do
+#    resources :tasks, only: [:create, :destroy]
+#  end
+
+#post'/projects/:project_id/tasks/:id/toggle' => tasks#toggle'
+
+#root 'projects#index'
+
+
+Origapp::Application.routes.draw do
+
+  resources :projects do
+    resources :tasks, only: [:create, :destroy]
+  end
+
+  root 'projects#index'
+
+end
+
+
+
+#  post'/projects/:project_id/tasks/:id/toggle' => tasks#toggle'
+
+#  root 'projects#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -53,4 +78,3 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end
