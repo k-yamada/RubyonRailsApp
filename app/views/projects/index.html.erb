@@ -1,19 +1,19 @@
-<h1>Projects</h1>
+<h1>社員名簿</h1>
 
 <ul>
   <% @projects.each do |project| %>
 
   <li>
+    <%= project.stuffnum %>
     <%= link_to project.title, project_path(project.id) %>
-    (<%= project.tasks.unfinished.count %>/<%= project.tasks.count %>)
-    <%= link_to "[Edit]", edit_project_path(project.id) %>
-    <%= link_to "[Delete]", edit_project_path(project.id),
-    method: :delete, data: { confirm: "are you sure?" } %>
+    <%= link_to "[変更]", edit_project_path(project.id) %>
+    <%= link_to "[削除]", project_path(project.id),
+        method: :delete, data: { confirm: "本当に削除してもよろしいですか？" } %>
   </li>
 
   <% end %>
 </ul>
 
-<p>
+<h5>
   <%= link_to "Add New", new_project_path %>
-</p>
+</h5>

@@ -1,7 +1,7 @@
-<%= form_for @Project do |f| %>
+<%= form_for @project do |f| %>
 
 <p>
-  <%= f.label :title %><br>
+  <%= f.label :社員名 %><br>
   <%= f.text_field :title %>
   <% if @project.errors.any? %>
   <%= @project.errors.messages[:title][0] %>
@@ -9,7 +9,15 @@
 </p>
 
 <p>
-  <%= f.submit %>
+  <%= f.label :社員番号 %><br>
+  <%= f.text_field :stuffnum %>
+  <% if @project.errors.any? %>
+  <%= @project.errors.messages[:id][0] %>
+  <% end %>
+</p>
+
+<p>
+  <%= f.submit :内容を保存する %>
 </p>
 
 <% end %>
