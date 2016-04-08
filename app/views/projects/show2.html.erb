@@ -1,0 +1,61 @@
+<h2><%= @project.title %></h2>
+
+<ul>
+  <% @project.tasks.each do |task| %>
+
+  <li>
+    <%= task.title %>
+    <%= link_to "[削除]", project_task_path(task.project_id, task.id),
+      method: :delete, data: { confirm: "本当に削除してもよろしいですか？" } %>
+  </li>
+
+  <% end %>
+
+  <li>
+    <%= "所属部署:" %>
+    <%= form_for [@project, @project.tasks.build] do |f| %>
+    <%= f.text_field :title %>
+    <%= f.submit :保存 %>
+    <% end %>
+  </li>
+
+  <li>
+    <%= "メールアドレス:" %>
+    <%= form_for [@project, @project.tasks.build] do |f| %>
+    <%= f.text_field :title %>
+    <%= f.submit :保存 %>
+    <% end %>
+  </li>
+
+  <li>
+    <%= "電話番号:" %>
+    <%= form_for [@project, @project.tasks.build] do |f| %>
+    <%= f.text_field :title %>
+    <%= f.submit :保存 %>
+    <% end %>
+  </li>
+  <li>
+    <%= "郵便番号:" %>
+    <%= form_for [@project, @project.tasks.build] do |f| %>
+    <%= f.text_field :title %>
+    <%= f.submit :保存 %>
+    <% end %>
+  </li>
+
+  <li>
+    <%= "住所:" %>
+    <%= form_for [@project, @project.tasks.build] do |f| %>
+    <%= f.text_field :title %>
+    <%= f.submit :保存 %>
+    <% end %>
+  </li>
+
+  <li>
+    <%= "年齢:" %>
+    <%= form_for [@project, @project.tasks.build] do |f| %>
+    <%= f.text_field :title %>
+    <%= f.submit :保存 %>
+    <% end %>
+  </li>
+
+</ul>

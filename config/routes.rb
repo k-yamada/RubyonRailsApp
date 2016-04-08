@@ -1,7 +1,7 @@
 Origapp::Application.routes.draw do
 
   resources :projects do
-    resources :tasks
+    resources :stuffs
   end
 
   root 'projects#index'

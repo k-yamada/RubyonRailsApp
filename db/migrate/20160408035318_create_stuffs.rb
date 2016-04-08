@@ -1,4 +1,4 @@
-class StuffInfo < ActiveRecord::Migration
+class CreateStuffs < ActiveRecord::Migration
   def change
     create_table :stuffs do |t|
       t.string :title
@@ -6,8 +6,9 @@ class StuffInfo < ActiveRecord::Migration
       t.integer :tel
       t.integer :post
       t.text :address
-      t.integer :age
-
+      t.date :birthday
+      t.references :project, index: true, foreign_key: true
+      
       t.timestamps null: false
     end
   end

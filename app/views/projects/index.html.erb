@@ -4,9 +4,10 @@
   <% @projects.each do |project| %>
 
   <li>
+    <%= "No." %>
     <%= project.stuffnum %>
     <%= link_to project.title, project_path(project.id) %>
-    <%= link_to "[変更]", edit_project_path(project.id) %>
+    <%= link_to "[更新]", edit_project_path(project.id) %>
     <%= link_to "[削除]", project_path(project.id),
         method: :delete, data: { confirm: "本当に削除してもよろしいですか？" } %>
   </li>
@@ -15,5 +16,5 @@
 </ul>
 
 <h5>
-  <%= link_to "Add New", new_project_path %>
+  <%= link_to "Add New Member", new_project_path %>
 </h5>

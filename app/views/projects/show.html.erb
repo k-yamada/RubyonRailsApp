@@ -1,19 +1,19 @@
 <h2><%= @project.title %></h2>
 
 <ul>
-  <% @project.tasks.each do |task| %>
+  <% @project.stuffs.all do |stuff| %>
 
-  <li>
-    <%= task.title %>
-    <%= link_to "[削除]", project_task_path(task.project_id, task.id),
+<!--  <li>
+   <%= stuff.title %>
+    <%= link_to "[削除]", project_stuff_path(stuff.project_id, stuff.id),
       method: :delete, data: { confirm: "本当に削除してもよろしいですか？" } %>
-  </li>
+  </li>  -->
 
   <% end %>
-  
+
   <li>
     <%= "所属部署:" %>
-    <%= form_for [@project, @project.tasks.build] do |f| %>
+    <%= form_for [@project, @project.stuffs.build] do |f| %>
     <%= f.text_field :title %>
     <%= f.submit :保存 %>
     <% end %>
@@ -21,39 +21,39 @@
 
   <li>
     <%= "メールアドレス:" %>
-    <%= form_for [@project, @project.tasks.build] do |f| %>
-    <%= f.text_field :title %>
+    <%= form_for [@project, @project.stuffs.build] do |f| %>
+    <%= f.email_field :mail %>
     <%= f.submit :保存 %>
     <% end %>
   </li>
 
   <li>
     <%= "電話番号:" %>
-    <%= form_for [@project, @project.tasks.build] do |f| %>
-    <%= f.text_field :title %>
+    <%= form_for [@project, @project.stuffs.build] do |f| %>
+    <%= f.telephone_field :tel %>
     <%= f.submit :保存 %>
     <% end %>
   </li>
   <li>
     <%= "郵便番号:" %>
-    <%= form_for [@project, @project.tasks.build] do |f| %>
-    <%= f.text_field :title %>
+    <%= form_for [@project, @project.stuffs.build] do |f| %>
+    <%= f.number_field :post %>
     <%= f.submit :保存 %>
     <% end %>
   </li>
 
   <li>
     <%= "住所:" %>
-    <%= form_for [@project, @project.tasks.build] do |f| %>
-    <%= f.text_field :title %>
+    <%= form_for [@project, @project.stuffs.build] do |f| %>
+    <%= f.text_field :address %>
     <%= f.submit :保存 %>
     <% end %>
   </li>
 
   <li>
-    <%= "年齢:" %>
-    <%= form_for [@project, @project.tasks.build] do |f| %>
-    <%= f.text_field :title %>
+    <%= "生年月日:" %>
+    <%= form_for [@project, @project.stuffs.build] do |f| %>
+    <%= f.date_field :birthday %>
     <%= f.submit :保存 %>
     <% end %>
   </li>

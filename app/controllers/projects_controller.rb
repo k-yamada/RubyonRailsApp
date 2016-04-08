@@ -17,7 +17,7 @@ class ProjectsController < ApplicationController
     if @project.save
       redirect_to projects_path
     else
-      render 'new'
+      render ':new'
     end
   end
 
@@ -39,7 +39,7 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params[:project].permit(:title)
+    params[:project].permit(:title, :stuffnum)
   end
 
   def set_project
