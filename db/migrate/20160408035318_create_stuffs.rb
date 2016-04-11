@@ -7,8 +7,9 @@ class CreateStuffs < ActiveRecord::Migration
       t.integer :post
       t.text :address
       t.date :birthday
+      t.boolean :done, default: false
       t.references :project, index: true, foreign_key: true
-      
+
       t.timestamps null: false
     end
   end

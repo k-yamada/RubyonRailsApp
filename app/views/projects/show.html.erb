@@ -1,7 +1,7 @@
 <h2><%= @project.title %></h2>
 
 <ul>
-  <% @project.stuffs.all do |stuff| %>
+  <% @project.stuffs.each do |stuff| %>
 
 <!--  <li>
    <%= stuff.title %>

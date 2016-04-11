@@ -1,9 +1,10 @@
 Origapp::Application.routes.draw do
 
   resources :projects do
-    resources :stuffs
+    resources :stuffs, only: [:create, :destroy]
   end
-
+  # 個人情報画面
+#  post '/projects/:project_id/stuffs/:id/toggle' => 'stuffs#toggle'
   root 'projects#index'
 end
 

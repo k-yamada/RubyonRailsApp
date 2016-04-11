@@ -9,6 +9,9 @@
   <br>
   <%= f.label :stuffnum, "社員番号:" %>
   <%= f.number_field :stuffnum %>
+  <% if @project.errors.any? %>
+  <%= @project.errors.messages[:title][0] %>
+  <% end %>
 </p>
 
 <p>
