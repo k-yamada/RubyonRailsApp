@@ -1,37 +1,29 @@
-<h2><%= @project.title %></h2>
+<!-- この画面では情報を変更せず、更新画面への移動と削除を行う -->
+<h1><%= @project.title %></h1>
 
 <ul>
-  <% @project.stuffs.each do |stuff| %>
-
-<!--  <li>
-   <%= stuff.title %>
-    <%= link_to "[削除]", project_stuff_path(stuff.project_id, stuff.id),
-      method: :delete, data: { confirm: "本当に削除してもよろしいですか？" } %>
-  </li>  -->
-
+  <% @project.stuffs.all do |stuff| %>
   <% end %>
 
-  <li>
-    <%= form_for [@project, @project.stuffs.build] do |f| %>
+  <p>
+    <%= form_for [@project, @project.stuffs.create] do |f| %>
+
     <%= "所属部署　　　:" %>
     <%= f.text_field :title %><br>
-
     <%= "メールアドレス:" %>
     <%= f.email_field :mail %><br>
-
     <%= "電話番号　　　:" %>
     <%= f.telephone_field :tel %><br>
-
     <%= "郵便番号　　　:" %>
     <%= f.text_field :post %><br>
-
     <%= "住所　　　　　　:" %>
     <%= f.text_field :address %><br>
-
-    <%= "生年月日　　 　:" %>
+    <%= "生年月日　　　:" %>
     <%= f.date_field :birthday %><br>
+
     <%= f.submit :保存 %>
-    <% end %>
-  </li>
+  <% end %>
+
+  </p>
 
 </ul>

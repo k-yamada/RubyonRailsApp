@@ -1,0 +1,52 @@
+<!-- 更新画面。個人情報ページの更新ボタンから遷移 -->
+<h1><%= @project.title %></h1>
+
+<ul>
+  <% @project.stuffs.all do |stuff| %>
+  <% end %>
+
+  <li>
+    <%= form_for [@project, @project.stuffs.build] do |f| %>
+
+    <%= "所属部署　　　:" %>
+    <%= f.text_field :title %>
+    <% if @stuff.errors.any? %>
+    <%= @stuff.errors.messages[:title][0] %>
+    <% end %><br>
+
+    <%= "メールアドレス:" %>
+    <%= f.email_field :mail %>
+    <% if @stuff.errors.any? %>
+    <%= @stuff.errors.messages[:mail][0] %>
+    <% end %><br>
+
+    <%= "電話番号　　　:" %>
+    <%= f.telephone_field :tel %>
+    <% if @stuff.errors.any? %>
+    <%= @stuff.errors.messages[:tel][0] %>
+    <% end %><br>
+
+    <%= "郵便番号　　　:" %>
+    <%= f.text_field :post %>
+    <% if @stuff.errors.any? %>
+    <%= @stuff.errors.messages[:post][0] %>
+    <% end %><br>
+
+    <%= "住所　　　　　　:" %>
+    <%= f.text_field :address %>
+    <% if @stuff.errors.any? %>
+    <%= @stuff.errors.messages[:address][0] %>
+    <% end %><br>
+
+    <%= "生年月日　　 　:" %>
+    <%= f.date_field :birthday %>
+    <% if @stuff.errors.any? %>
+    <%= @stuff.errors.messages[:birthday][0] %>
+
+    <% end %><br>
+
+    <%= f.submit :保存 %>
+    <% end %>
+  </li>
+
+</ul>
