@@ -4,7 +4,7 @@ class CreateStuffs < ActiveRecord::Migration
       t.string :title
       t.string :mail
       t.integer :tel
-      t.integer :post
+      t.text :post
       t.text :address
       t.date :birthday
       t.boolean :done, default: false

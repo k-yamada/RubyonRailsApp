@@ -12,48 +12,24 @@
   <% end %>
 
   <li>
-    <%= "所属部署:" %>
     <%= form_for [@project, @project.stuffs.build] do |f| %>
-    <%= f.text_field :title %>
-    <%= f.submit :保存 %>
-    <% end %>
-  </li>
+    <%= "所属部署　　　:" %>
+    <%= f.text_field :title %><br>
 
-  <li>
     <%= "メールアドレス:" %>
-    <%= form_for [@project, @project.stuffs.build] do |f| %>
-    <%= f.email_field :mail %>
-    <%= f.submit :保存 %>
-    <% end %>
-  </li>
+    <%= f.email_field :mail %><br>
 
-  <li>
-    <%= "電話番号:" %>
-    <%= form_for [@project, @project.stuffs.build] do |f| %>
-    <%= f.telephone_field :tel %>
-    <%= f.submit :保存 %>
-    <% end %>
-  </li>
-  <li>
-    <%= "郵便番号:" %>
-    <%= form_for [@project, @project.stuffs.build] do |f| %>
-    <%= f.number_field :post %>
-    <%= f.submit :保存 %>
-    <% end %>
-  </li>
+    <%= "電話番号　　　:" %>
+    <%= f.telephone_field :tel %><br>
 
-  <li>
-    <%= "住所:" %>
-    <%= form_for [@project, @project.stuffs.build] do |f| %>
-    <%= f.text_field :address %>
-    <%= f.submit :保存 %>
-    <% end %>
-  </li>
+    <%= "郵便番号　　　:" %>
+    <%= f.text_field :post %><br>
 
-  <li>
-    <%= "生年月日:" %>
-    <%= form_for [@project, @project.stuffs.build] do |f| %>
-    <%= f.date_field :birthday %>
+    <%= "住所　　　　　　:" %>
+    <%= f.text_field :address %><br>
+
+    <%= "生年月日　　 　:" %>
+    <%= f.date_field :birthday %><br>
     <%= f.submit :保存 %>
     <% end %>
   </li>
