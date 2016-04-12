@@ -5,6 +5,7 @@ class CreateProjects < ActiveRecord::Migration
       t.integer :stuffnum, uniqueness: true
 
       t.timestamps null: false
+      has_one :invoice, dependent: :destroy
     end
   end
 end

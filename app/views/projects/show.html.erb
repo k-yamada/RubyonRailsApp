@@ -6,19 +6,31 @@
 <!--  <% @project.stuffs.all do |stuff| %> -->
 <!--  <% end %> -->
 
+
+<% if @stuff.present? && @stuff.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@stuff.errors.count, "error") %> prohibited this item from being saved: </h2>
+
+    <% @stuff.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+
   <p>
-    <%= form_for [@project, @project.stuffs.create] do |f| %>
+    <%= form_for [@project, @project.stuffs.first || @project.stuffs.new] do |f| %>
 
     <%= "所属部署　　　:" %>
-    <%= f.text_field :title %>
+    <%= f.text_field :title %><br>
     <%= "メールアドレス:" %>
-    <%= f.email_field :mail %>
+    <%= f.email_field :mail %><br>
     <%= "電話番号　　　:" %>
-    <%= f.telephone_field :tel %>
+    <%= f.telephone_field :tel %><br>
     <%= "郵便番号　　　:" %>
-    <%= f.text_field :post %>
+    <%= f.text_field :post %><br>
     <%= "住所　　　　　　:" %>
-    <%= f.text_field :address %>
+    <%= f.text_field :address %><br>
     <%= "生年月日　　　:" %>
     <%= f.date_field :birthday %><br>
 
@@ -26,5 +38,4 @@
 
     <% end %>
   </p>
-
 </ul>
