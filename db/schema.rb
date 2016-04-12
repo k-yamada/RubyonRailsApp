@@ -24,12 +24,13 @@ ActiveRecord::Schema.define(version: 20160408035318) do
     t.string   "title"
     t.string   "mail"
     t.integer  "tel"
-    t.integer  "post"
+    t.text     "post"
     t.text     "address"
     t.date     "birthday"
+    t.boolean  "done",       default: false
     t.integer  "project_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   add_index "stuffs", ["project_id"], name: "index_stuffs_on_project_id"

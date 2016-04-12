@@ -1,0 +1,24 @@
+<!-- この画面では情報を変更せず、更新画面への移動を行う -->
+<h1><%= @project.title %></h1>
+
+<ul>
+  <% @project.stuffs.each do |stuff| %>
+  <li>
+    <%= "所属部署　　　:" %>
+    <%= stuff.title %><br>
+    <%= "メールアドレス:" %>
+    <%= stuff.mail %><br>
+    <%= "電話番号　　　:" %>
+    <%= stuff.tel %><br>
+    <%= "郵便番号　　　:" %>
+    <%= stuff.post %><br>
+    <%= "住所　　　　　　:" %>
+    <%= stuff.address %><br>
+    <%= "生年月日　　　:" %>
+    <%= stuff.birthday %><br>
+  </li>
+  <p>
+    <%= link_to "[更新]", edit_project_stuff_path(stuff.project_id, stuff.id) %>
+    <% end %>
+  </p>
+</ul>

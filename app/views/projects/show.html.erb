@@ -1,12 +1,9 @@
-<!-- この画面では情報を変更せず、更新画面への移動と削除を行う -->
-<!-- とりあえず入力画面を先にここで作成し、後で情報閲覧画面に置き換える -->
+<!-- 更新画面。個人情報ページの更新ボタンから遷移 -->
+<!-- 仮にここにエディットページをおいておき、後で入れ替える -->
 <h1><%= @project.title %></h1>
+<h2><%="　登録情報の更新" %></h2>
 
-<ul>
-<!--  <% @project.stuffs.all do |stuff| %> -->
-<!--  <% end %> -->
-
-
+<ul>　
 <% if @stuff.present? && @stuff.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(@stuff.errors.count, "error") %> prohibited this item from being saved: </h2>
@@ -35,7 +32,6 @@
     <%= f.date_field :birthday %><br>
 
     <%= f.submit :保存 %>
-
     <% end %>
   </p>
 </ul>

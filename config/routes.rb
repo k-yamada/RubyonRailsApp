@@ -3,12 +3,11 @@ Origapp::Application.routes.draw do
   resources :projects do
     resources :stuffs
   end
+  resources :stuffs
   # 個人情報画面
-#  post '/projects/:project_id/stuffs/:id/toggle' => 'stuffs#toggle'
+  post '/projects/:project_id/stuffs/:id/toggle' => 'stuff#toggle'
   root 'projects#index'
 end
-
-
 
 #  post'/projects/:project_id/tasks/:id/toggle' => tasks#toggle'
 

@@ -13,6 +13,9 @@ class StuffsController < ApplicationController
     end
   end
 
+  def edit;
+    @project = Project.find(params[:project_id])
+  end
 
   def update
     if @stuff.update(stuff_params)
