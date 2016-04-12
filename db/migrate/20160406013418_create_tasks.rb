@@ -1,4 +1,3 @@
-<!-- 不要ファイル。後で消す -->
 class CreateTasks < ActiveRecord::Migration
   def change
     create_table :tasks do |t|
