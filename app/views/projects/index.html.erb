@@ -3,6 +3,7 @@
 
 <ul>
   <table border=1>
+
     <thead>
       <tr>
         <th><%= "ID" %></th>
@@ -11,6 +12,7 @@
         <th><%= "削除" %></th>
       </tr>
     </thead>
+
     <tbody>
       <% @projects.each do |project| %>
         <tr>
@@ -18,11 +20,12 @@
           <%= project.stuffnum %></td>
           <td><%= link_to project.title, project_path(project.id) %></td>
           <td><%= link_to "更新", edit_project_path(project.id) %></td>
-          <td><%= link_to "削除", project_path(project.id),
-          method: :delete, data: { confirm: "本当に削除してもよろしいですか？" } %></td>
+          <td><%= link_to "削除", project_path(project.id), method:
+           :delete, data: { confirm: "本当に削除してもよろしいですか？" } %></td>
         </tr>
       <% end %>
     </tbody>
+
   </table>
 </ul>
 
