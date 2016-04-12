@@ -1,3 +1,4 @@
+# 不要ファイル。後で消す
 class Task < ActiveRecord::Base
   belongs_to :project
   validates :title, presence: true

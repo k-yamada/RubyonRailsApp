@@ -1,29 +1,30 @@
 <!-- この画面では情報を変更せず、更新画面への移動と削除を行う -->
+<!-- とりあえず入力画面を先にここで作成し、後で情報閲覧画面に置き換える -->
 <h1><%= @project.title %></h1>
 
 <ul>
-  <% @project.stuffs.all do |stuff| %>
-  <% end %>
+<!--  <% @project.stuffs.all do |stuff| %> -->
+<!--  <% end %> -->
 
   <p>
     <%= form_for [@project, @project.stuffs.create] do |f| %>
 
     <%= "所属部署　　　:" %>
-    <%= f.text_field :title %><br>
+    <%= f.text_field :title %>
     <%= "メールアドレス:" %>
-    <%= f.email_field :mail %><br>
+    <%= f.email_field :mail %>
     <%= "電話番号　　　:" %>
-    <%= f.telephone_field :tel %><br>
+    <%= f.telephone_field :tel %>
     <%= "郵便番号　　　:" %>
-    <%= f.text_field :post %><br>
+    <%= f.text_field :post %>
     <%= "住所　　　　　　:" %>
-    <%= f.text_field :address %><br>
+    <%= f.text_field :address %>
     <%= "生年月日　　　:" %>
     <%= f.date_field :birthday %><br>
 
     <%= f.submit :保存 %>
-  <% end %>
 
+    <% end %>
   </p>
 
 </ul>
